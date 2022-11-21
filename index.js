@@ -16,10 +16,16 @@ const inquirerQuestions = questions.map(it => {
 })
 
 async function askQuestions() {
-  inquirer.prompt(inquirerQuestions)
+  return await inquirer.prompt(inquirerQuestions)
 }
 
-askQuestions()
+async function collectAnswersAndGenerateProfile() {
+  const responses = await askQuestions()
+  console.log(responses)
+}
+
+collectAnswersAndGenerateProfile()
+
 
 /*
   name, location, bio, LinkedIn URL, and GitHub URL
