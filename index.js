@@ -21,8 +21,11 @@ async function askQuestions() {
 }
 
 async function collectAnswersAndGenerateProfile() {
+  console.log('Answer some questions, dude.')
   const responses = await askQuestions()
+  console.log('Generating HTML from template.')
   await generateProfileHtml(responses)
+  console.log('All done, dude.')
 }
 
 async function generateProfileHtml(answers) {
