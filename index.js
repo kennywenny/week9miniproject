@@ -22,7 +22,7 @@ async function askQuestions() {
 
 async function collectAnswersAndGenerateProfile() {
   const responses = await askQuestions()
-  console.log(responses)
+  await generateProfileHtml(responses)
 }
 
 async function generateProfileHtml(answers) {
@@ -33,22 +33,7 @@ async function generateProfileHtml(answers) {
     .replace('BIO', answers.bio)
     .replace('LINKED_IN_URL', answers.linkedinUrl)
     .replace('GITHUB_URL', answers.githubUrl)
-  console.log(profileHtml)
+  await fs.promises.writeFile('./index.html', profileHtml)
 }
 
-const dummyAnswers = {
-  name: 'entered name',
-  location: 'location entered',
-  bio: 'entered bio',
-  linkedinUrl: 'linkedIn URL',
-  githubUrl: 'github URL'
-}
-
-generateProfileHtml(dummyAnswers)
-
-// collectAnswersAndGenerateProfile()
-
-
-/*
-  name, location, bio, LinkedIn URL, and GitHub URL
-  */
+collectAnswersAndGenerateProfile()
