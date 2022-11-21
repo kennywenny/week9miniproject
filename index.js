@@ -27,7 +27,9 @@ async function collectAnswersAndGenerateProfile() {
 
 async function generateProfileHtml(answers) {
   const templateDocument = await fs.promises.readFile('./template.html', 'utf8')
-  console.log(templateDocument)
+  const profileHtml = templateDocument
+    .replace('NAME', answers.name)
+  console.log(profileHtml)
 }
 
 const dummyAnswers = {
