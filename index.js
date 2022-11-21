@@ -24,7 +24,21 @@ async function collectAnswersAndGenerateProfile() {
   console.log(responses)
 }
 
-collectAnswersAndGenerateProfile()
+async function generateProfileHtml(answers) {
+  console.log(answers)
+}
+
+const dummyAnswers = {
+  name: 'entered name',
+  location: 'location entered',
+  bio: 'entered bio',
+  linkedinUrl: 'linkedIn URL',
+  githubUrl: 'github URL'
+}
+
+generateProfileHtml(dummyAnswers)
+
+// collectAnswersAndGenerateProfile()
 
 
 /*
