@@ -29,6 +29,10 @@ async function generateProfileHtml(answers) {
   const templateDocument = await fs.promises.readFile('./template.html', 'utf8')
   const profileHtml = templateDocument
     .replace('NAME', answers.name)
+    .replace('LOCATION', answers.location)
+    .replace('BIO', answers.bio)
+    .replace('LINKED_IN_URL', answers.linkedinUrl)
+    .replace('GITHUB_URL', answers.githubUrl)
   console.log(profileHtml)
 }
 
