@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs')
 
 const questions = [
   'name',
@@ -25,7 +26,8 @@ async function collectAnswersAndGenerateProfile() {
 }
 
 async function generateProfileHtml(answers) {
-  console.log(answers)
+  const templateDocument = await fs.promises.readFile('./template.html', 'utf8')
+  console.log(templateDocument)
 }
 
 const dummyAnswers = {
